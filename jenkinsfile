@@ -1,0 +1,23 @@
+pipeline
+{
+	agent any
+	stages
+	{
+		stage ('scm checkout')
+		{
+			steps
+			{
+				git branch: 'master', url: 'https://github.com/jainilaws1/maven-project'
+			}
+		}
+		stage ('clean')
+		{
+			steps
+			{
+				withGradle {
+								sh 'gradlew clean'
+							}
+			}
+		}
+	}
+}
