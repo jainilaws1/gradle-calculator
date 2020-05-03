@@ -15,7 +15,7 @@ pipeline
 			steps
 			{
 				withGradle {
-								sh 'gradlew clean'
+								sh './gradlew clean'
 							}
 			}
 		}
