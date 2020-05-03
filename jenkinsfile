@@ -19,5 +19,23 @@ pipeline
 							}
 			}
 		}
+		stage ('assemble')
+		{
+			steps
+			{
+				withGradle {
+								sh './gradlew assemble'
+							}
+			}
+		}
+		stage ('build')
+		{
+			steps
+			{
+				withGradle {
+								sh './gradlew build'
+							}
+			}
+		}
 	}
 }
